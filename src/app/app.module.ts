@@ -6,6 +6,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ListComponent } from './components/list/list.component';
 import { AddFormComponent } from './components/add-form/add-form.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

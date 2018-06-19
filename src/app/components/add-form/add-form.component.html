@@ -1,3 +1,15 @@
-<p>
-  add-form works!
-</p>
+<section id="add-form">
+  <h2>Add Item</h2>
+  <form #addForm="ngForm" (ngSubmit)="addItem()">
+    <label for="name">Item Name</label>
+    <input type="text" class="fullWidth" name="name" [(ngModel)]="newItem.name" />
+    <div class="flex">
+      <label for="quantity">Item Quantity</label>
+      <input type="number" name="quantity" [(ngModel)]="newItem.quantity" />
+    </div>
+    <label for="notes">Item Notes</label>
+    <textarea name="notes" class="fullWidth" rows="4" [(ngModel)]="newItem.notes"></textarea>
+    <button type="submit">Add Item</button>
+  </form>
+  <p *ngIf="postResponse">{{ postResponse }}</p>
+</section>

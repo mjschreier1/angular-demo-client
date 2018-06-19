@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ListItem } from '../interfaces/list-item';
-import { DeleteResponseObject } from '../interfaces/response-object';
+import { DeleteResponseObject, PostResponseObject } from '../interfaces/response-object';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +22,10 @@ export class HttpService {
 
   deleteItem(id: number): Observable<DeleteResponseObject> {
     let params = new HttpParams().set("id", id.toString())
-    return this._http.delete<DeleteResponseObject>(`${this.url}${this.listPath}`, { params: params })
+    return this._http.delete<DeleteResponseObject>(`${this.url}${this.listPath}`, { params: params });
+  }
+
+  addItem(item: ListItem): Observable<PostResponseObject> {
+    return this._http.post<PostResponseObject>(`${this.url}${this.listPath}`, item);
   }
 }
