@@ -14,14 +14,14 @@ export class AddFormComponent implements OnInit, AfterViewInit {
 
   constructor(private _newItemService: NewItemService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.newItem = {
       id: null,
       name: ""
     }
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this._newItemService.postResponse.subscribe((res: PostResponseObject) => {
       res.error
         ? this.postResponse = "Something went wrong; please try again."
