@@ -1,3 +1,13 @@
-<p>
-  list works!
-</p>
+<section id="list">
+  <h2 *ngIf="!listExists">Please use the form to add items to your list!</h2>
+  <ul>
+    <li *ngFor="let item of listItems">
+      <div class="card">
+        <i class="fas fa-times" (click)="deleteItem(item.id)"></i>
+        <h3>{{ item.name }}</h3>
+        <p *ngIf="item.quantity">Quantity: {{ item.quantity }}</p>
+        <small *ngIf="item.notes">{{ item.notes }}</small>
+      </div>
+    </li>
+  </ul>
+</section>

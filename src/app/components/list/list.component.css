@@ -1,0 +1,26 @@
+ul {
+  list-style: none;
+}
+
+.card {
+  border: 1px #333333 solid;
+  margin-bottom: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+h3, p {
+  margin: 0;
+}
+
+small {
+  font-size: 12px;
+}
+
+i {
+  float: right;
+}
+
+i:hover {
+  cursor: pointer;
+}

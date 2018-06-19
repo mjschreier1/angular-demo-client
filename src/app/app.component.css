@@ -1,0 +1,13 @@
+main {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10vh;
+}
+
+app-list {
+  width: 40vw;
+}
+
+app-add-form {
+  width: 40vw;
+}
